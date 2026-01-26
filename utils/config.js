@@ -1,7 +1,7 @@
 const CONFIG = {
   baseURL: 'https://rahulshettyacademy.com/loginpagePractise',
-  headless: false,
-  slowMo: 100,
+  headless: process.env.CI === 'true' ? true : false,  
+  slowMo: process.env.CI === 'true' ? 0 : 100, 
   timeout: 30000,
   credentials: {
     validUsername: 'rahulshettyacademy',
